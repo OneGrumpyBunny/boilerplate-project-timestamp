@@ -24,14 +24,14 @@ app.get("/api/hello", function (req, res) {
   res.json({greeting: 'hello API'});
 });
 
-app.get("/api/timestamp/", (req, res) => {
+app.get("/api", (req, res) => {
   res.json({
     unix: Date.now(),
     utc: Date()
   });
 });
 
-app.get("/api/timestamp/:date_string", (req, res) => {
+app.get("/api/:date_string", (req, res) => {
   let dateString = req.params.date_string;
 
   //A 4 digit number is a valid ISO-8601 for the beginning of that year
